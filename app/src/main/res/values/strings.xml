@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">KrediHesapla</string>
+    <string name="header">KREDİ HESAPLA</string>
+    <string name="hesapla">Hesapla</string>
+    <string name="ekstre">Kredi Dökümü</string>
+</resources>
