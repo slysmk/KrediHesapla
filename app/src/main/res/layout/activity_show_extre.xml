@@ -13,7 +13,7 @@
         android:background="@color/primaryLightColor"
         android:fontFamily="sans-serif-medium"
         android:gravity="center"
-        android:text="@string/header"
+        android:text="@string/ekstreDetay"
         android:textAlignment="center"
         android:textColor="@color/primaryTextColor"
         android:textScaleX="1.3"
@@ -27,7 +27,8 @@
         android:id="@+id/listView"
         android:layout_width="0dp"
         android:layout_height="719dp"
-        android:background="#41004BA0"
+        android:background="#16004BA0"
+        android:textAlignment="viewStart"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />

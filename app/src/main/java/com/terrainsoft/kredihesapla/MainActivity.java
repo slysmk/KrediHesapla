@@ -131,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
             String f=new DecimalFormat("#,##0.00").format(maliyet-tutar);
 
 
-            textView.setText("Taksit Tutarı : "+d+ " TL"+ " \n" + "Toplam Maliyet : "+m+ " TL"+"\n"+"Toplam Faiz : "+f);
+            textView.setText(" Taksit Tutarı : "+d+ " TL"+ " \n" + " Toplam Maliyet : "+m+ " TL"+"\n"+" Toplam Faiz : "+f);
 
 
 
@@ -146,6 +146,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void getExtre(View view){
+
+        if (deger==1){
+            hesapla(view);
+        }
+
         Intent intent=new Intent(this,ShowExtre.class);
 
         intent.putExtra("tutar",tutar);

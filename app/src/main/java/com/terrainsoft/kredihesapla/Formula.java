@@ -35,11 +35,16 @@ public class Formula {
             bakiye=bakiye-netBorc;
 
 
-            taksitDokumu.add(i, new DecimalFormat("#,##0.00").format(taksitTutarı)+" TL "+
+           /* taksitDokumu.add(i,  Integer.toString(i+1)+"." +new DecimalFormat("#,##0.00").format(taksitTutarı)+" TL "+
                     new DecimalFormat("#,##0.00").format(faiz)+ " TL "+
                     new DecimalFormat("#,##0.00").format(KKDF)+ " TL "+
                     new DecimalFormat("#,##0.00").format(BSMV)+ " TL "+
-                    new DecimalFormat("#,##0.00").format(netBorc)+ " TL ");
+                    new DecimalFormat("#,##0.00").format(netBorc)+ " TL ");*/
+
+            taksitDokumu.add(i,  Integer.toString(i+1)+" - " +new DecimalFormat("#,##0.00").format(taksitTutarı)+" TL "+
+                    new DecimalFormat("#,##0.00").format(netBorc)+ " TL "+
+
+                    new DecimalFormat("#,##0.00").format(faiz+KKDF+BSMV)+ " TL ");
 
 
         }
