@@ -15,7 +15,7 @@ public class Formula {
         return taksitTutari;
     }
 
-    public ArrayList<String> TaksitDokum(double taksitTutarı,double oran,double anapara,int vade){
+    public ArrayList<String> TaksitDokum(double taksitTutari,double oran,double anapara,int vade){
         double bakiye=anapara;
 
         ArrayList<String> taksitDokumu=new ArrayList<>();
@@ -23,28 +23,32 @@ public class Formula {
 
         for (int i=0;i<vade;i++) {
 
-            String s=null;
+            //String s=null;
             double faiz=bakiye*oran/100;
             double KKDF=faiz*0.15;
             double BSMV=faiz*0.05;
+            System.out.println("döngü ="+i);
 
 
 
-            double netBorc=taksitTutarı-faiz-BSMV-KKDF;
+            double netBorc=taksitTutari-faiz-BSMV-KKDF;
 
             bakiye=bakiye-netBorc;
 
+            taksitDokumu.add(i,  Integer.toString(i+1)+" - " +new DecimalFormat("#,##0.00").format(taksitTutari)+" TL "+
+                    new DecimalFormat("#,##0.00").format(netBorc)+ " TL "+
 
-           /* taksitDokumu.add(i,  Integer.toString(i+1)+"." +new DecimalFormat("#,##0.00").format(taksitTutarı)+" TL "+
+                    new DecimalFormat("#,##0.00").format(faiz+KKDF+BSMV)+ " TL "+
+
+                    new DecimalFormat("#,##0.00").format(bakiye)+ " TL "
+
+            );
+            /*taksitDokumu.add(i, new DecimalFormat("#,##0.00").format(taksitTutari)+" TL "+
                     new DecimalFormat("#,##0.00").format(faiz)+ " TL "+
                     new DecimalFormat("#,##0.00").format(KKDF)+ " TL "+
                     new DecimalFormat("#,##0.00").format(BSMV)+ " TL "+
                     new DecimalFormat("#,##0.00").format(netBorc)+ " TL ");*/
 
-            taksitDokumu.add(i,  Integer.toString(i+1)+" - " +new DecimalFormat("#,##0.00").format(taksitTutarı)+" TL "+
-                    new DecimalFormat("#,##0.00").format(netBorc)+ " TL "+
-
-                    new DecimalFormat("#,##0.00").format(faiz+KKDF+BSMV)+ " TL ");
 
 
         }
